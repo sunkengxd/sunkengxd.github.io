@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Plans</title>
+        <meta name="description" content="vito's to do list" />
+        <meta name="keywords" content="todo, programming" />
+        <meta name="author" content="vito" />
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="styles/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            #todo {
+                position: relative;
+                list-style: none;
+                padding-left: 3em;
+            }
+
+            #todo li:not(:last-child) {
+                margin-bottom: 1em;
+            }
+
+            #todo li:before {
+                position: absolute;
+                font-family: monospace;
+                left: 0;
+            }
+
+            #todo li.done,
+            li.abandoned {
+                text-decoration: line-through;
+            }
+
+            #todo li:before {
+                content: "TODO";
+            }
+
+            #todo li.done:before {
+                content: "DONE";
+            }
+
+            #todo li.important:before {
+                content: "IMP!";
+            }
+
+            #todo li.maybe:before {
+                content: "MAB?";
+            }
+
+            #todo li.abandoned:before {
+                content: "NOPE";
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <header>
+                <nav role="navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <h1 id="header__title">Plans</h1>
+            </header>
+
+            <div id="entries">
+                <ul id="todo">
+                    <li class="important">Home page</li>
+                    <li class="important">About page</li>
+                    <li class="important">Projects page</li>
+                    <li class="important">Social page</li>
+                    <li class="maybe">Git Integration?</li>
+                    <li class="maybe">Footer?</li>
+                </ul>
+            </div>
+
+            <footer>Plans</footer>
+        </div>
+    </body>
+</html>

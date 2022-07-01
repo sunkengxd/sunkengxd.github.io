@@ -1,0 +1,136 @@
+:root {
+    --black: #111;
+    --white: #f5f5f5;
+    --grey: #777;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: var(--black);
+        --foreground: var(--white);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: var(--white);
+        --foreground: var(--black);
+    }
+}
+
+* {
+    all: unset;
+
+    /* Positioning */
+
+    /* Box-model */
+    display: revert;
+
+    /* Typography */
+    font-family: "Playfair Display", serif;
+    color: var(--foreground);
+
+    /* Visual */
+    background-color: var(--background);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content {
+    max-width: 70ch;
+    padding: 0 0.5rem;
+}
+
+/* HEADER */
+
+header {
+    padding: 1em 0;
+    border-bottom: 0.2em solid var(--foreground);
+}
+
+nav {
+    margin: 0 auto;
+
+    font-size: 2em;
+    text-align: center;
+}
+
+nav a {
+    margin: 0.2em;
+}
+
+a {
+    color: var(--grey);
+    transition: color 0.5s ease-out;
+}
+
+a:hover,
+a:active {
+    color: var(--foreground);
+}
+
+#header__title {
+    padding: 2rem 0 1rem 0;
+
+    text-align: center;
+    font-size: 4em;
+
+    transition: color 0.3s ease-in-out;
+}
+
+#header__title:before {
+    content: "··· ";
+}
+
+#header__title:after {
+    content: " ···";
+}
+
+#entries {
+    margin: 4em auto 2em;
+}
+
+.entry {
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+.entry:not(:first-child) {
+    margin-top: 1em;
+}
+
+.entry:not(:last-child) {
+    padding-bottom: 1em;
+    border-bottom: 0.1em dashed var(--foreground);
+}
+
+.entry__header {
+    line-height: calc(1ex / 0.42);
+    margin-bottom: calc(1ex / 0.42);
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.entry__paragraph {
+    line-height: calc(1ex / 0.32);
+    text-align: justify;
+    text-indent: 1em;
+    hyphens: auto;
+}
+
+.entry__link {
+    margin-top: 2em;
+    font-style: monospace;
+}
+
+footer {
+    margin-bottom: 1rem;
+    padding: 0 1rem 0 0;
+    font-size: 0.8rem;
+    float: right;
+    font-style: italic;
+}
