@@ -162,7 +162,8 @@ a:active {
 }
 
 .entry__link {
-    margin-top: 2em;
+    margin-top: 0.8em;
+    display: inline-block;
     font-style: monospace;
 }
 
