@@ -135,11 +135,14 @@ header > h1:after {
 }
 
 .entry:not(:last-child)::after {
-    content: "~";
+    content: "· · ·";
     position: absolute;
 
-    padding-top: 2ex;
+    padding-top: 1ex;
     left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 1.5em;
 }
 
 .entry > h2 {
