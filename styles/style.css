@@ -212,7 +212,11 @@ ul {
 }
 
 li {
-    text-indent: 3em;
+    padding-left: 3em;
+}
+
+li:not(:last-child) {
+    margin-bottom: 0.2em;
 }
 
 footer {
