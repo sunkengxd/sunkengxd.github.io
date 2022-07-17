@@ -20,6 +20,25 @@
             href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
             rel="stylesheet"
         />
+
+        <style>
+            dt {
+                font-size: 1.5em;
+            }
+
+            dt:not(:last-child) {
+                padding-bottom: 0.5em;
+            }
+
+            dt:not(:first-child) {
+                padding-top: 1em;
+            }
+
+            dd {
+                padding-bottom: 0.2em;
+                text-indent: 1em;
+            }
+        </style>
     </head>
 
     <body>
@@ -36,27 +55,22 @@
             </header>
 
             <div id="entries">
-                <div class="entry">
-                    <h2 class="entry__header">Project name</h2>
-
-                    <p class="entry__paragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                    </p>
-
-                    <a class="entry__link" href="example.com">GitHub</a>
-                </div>
+                <dl>
+                    <dt>This website</dt>
+                    <dd>
+                        Pretty straighforward — the website you're on right now.
+                    </dd>
+                    <dd>
+                        <a
+                            href="https://github.com/sunkengxd/sunkengxd.github.io"
+                            >GitHub</a
+                        >
+                    </dd>
+                </dl>
             </div>
 
             <footer>
-                <p>Projects</p>
+                <a href="#">Projects</a>
             </footer>
         </div>
     </body>
