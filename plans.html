@@ -84,7 +84,7 @@
                 left: 0;
             }
 
-            #todo li.done,
+            #todo .done,
             li.abandoned {
                 text-decoration: line-through;
             }
@@ -93,26 +93,26 @@
                 content: "TODO";
             }
 
-            #todo li.done:before {
+            #todo .done:before {
                 content: "DONE";
             }
 
-            #todo li.important:before {
+            #todo .important:before {
                 content: "IMP!";
             }
 
-            #todo li.maybe:before {
-                content: "MAB?";
+            #todo .maybe:before {
+                content: "MAYB";
             }
 
-            #todo li.abandoned:before {
+            #todo .abandoned:before {
                 content: "NOPE";
             }
         </style>
     </head>
 
     <body>
-        <div id="content">
+        <div id="container">
             <header>
                 <nav role="navigation">
                     <a href="/">Home</a>
@@ -121,19 +121,20 @@
                     <a href="contact">Contact</a>
                 </nav>
 
-                <h1 id="header__title">Plans</h1>
+                <h1>Plans</h1>
             </header>
 
-            <div id="entries">
-                <div class="entry">
-                    <h2>This website:</h2>
+            <div id="splitter"></div>
+
+            <div id="content">
+                <article>
+                    <h1>This website</h1>
                     <ul id="todo">
-                        <li>Projects page</li>
                         <li class="maybe">Git Integration</li>
                         <li>EE landing</li>
                         <li>LED strip</li>
                     </ul>
-                </div>
+                </article>
             </div>
 
             <footer>

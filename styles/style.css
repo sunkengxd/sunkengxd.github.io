@@ -7,63 +7,6 @@
     --foreground: var(--black);
 }
 
-@media screen and (max-width: 640px) {
-    #content {
-        width: 95vw;
-    }
-
-    nav {
-        font-size: 1em;
-    }
-
-    header > h1 {
-        font-size: 2em;
-    }
-
-    .entry > p {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #content {
-        width: 90vw;
-        padding: 0 1rem;
-    }
-
-    nav {
-        font-size: 1.5em;
-    }
-
-    header > h1 {
-        font-size: 2.5em;
-    }
-
-    .entry > p {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #content {
-        max-width: 70ch;
-        width: 100%;
-        padding: 0 0.5rem;
-    }
-
-    nav {
-        font-size: 2em;
-    }
-
-    header > h1 {
-        font-size: 4em;
-    }
-
-    .entry > p {
-        font-size: 1.1rem;
-    }
-}
-
 @media (prefers-color-scheme: dark) {
     :root {
         --background: var(--black);
@@ -73,17 +16,11 @@
 
 * {
     all: unset;
-
-    /* Positioning */
-
-    /* Box-model */
     display: revert;
 
-    /* Typography */
     font-family: "Playfair Display", serif;
     color: var(--foreground);
 
-    /* Visual */
     background-color: var(--background);
 }
 
@@ -104,19 +41,21 @@ body {
     align-items: center;
 }
 
+#container {
+    padding: 0 0.2rem;
+}
+
 header {
-    padding: 1em 0;
-    border-bottom: 0.2em solid var(--foreground);
 }
 
 nav {
-    margin: 0 auto;
-
+    margin: 0.5em auto 0;
     text-align: center;
 }
 
 nav a {
-    margin: 0.2em;
+    padding: 0 0.2em 0;
+    font-size: 1.3em;
 }
 
 a {
@@ -132,7 +71,8 @@ a:active {
 }
 
 header > h1 {
-    padding: 2rem 0 1rem 0;
+    margin-top: 0.4em;
+    font-size: 2.2em;
     text-align: center;
 }
 
@@ -144,20 +84,26 @@ header > h1:after {
     content: " ···";
 }
 
-#entries {
-    margin: 4em auto 2em;
+#splitter {
+    height: 0.2em;
+    background-color: var(--foreground);
+    margin: 2em auto 5em;
+    width: 90vw;
 }
 
-.entry {
-    max-width: 60ch;
+#content {
+    margin-bottom: 1em;
+}
+
+article {
     margin: 0 auto;
 }
 
-.entry:not(:last-child) {
+article:not(:last-child) {
     padding-bottom: 10ex;
 }
 
-.entry:not(:last-child)::after {
+article:not(:last-child)::after {
     content: "···";
     position: absolute;
 
@@ -171,21 +117,24 @@ header > h1:after {
     letter-spacing: 0.5em;
 }
 
-.entry > h2 {
+article > h1 {
     line-height: calc(1ex / 0.42);
     margin-bottom: calc(1ex / 0.42);
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 600;
 
     text-align: center;
 }
 
-.entry > p {
+article > p {
     line-height: calc(1ex / 0.32);
     text-align: justify;
-    text-indent: 2em;
+    text-indent: 2ex;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 50ch;
+    width: 100%;
+    display: block;
 
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -196,8 +145,7 @@ header > h1:after {
     margin-bottom: 0.5em;
 }
 
-.entry > a {
-    margin-top: 0.8em;
+article > a {
     display: inline-block;
     font-style: monospace;
 }
@@ -208,17 +156,149 @@ ul {
 }
 
 li {
-    padding-left: 3em;
+    padding-left: 4ex;
 }
 
 li:not(:last-child) {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.4em;
 }
 
-footer {
-    margin-bottom: 1rem;
-    padding: 0 1rem 0 0;
-    font-size: 0.8rem;
+dt:not(:last-child) {
+    padding-bottom: 0.5em;
+}
+
+dt:not(:first-child) {
+    padding-top: 1em;
+}
+
+dd {
+    margin: 0 0 0.2em 1em;
+}
+s footer {
+    margin: 0 0.5rem 0.5rem 0;
+    font-size: 0.8em;
     float: right;
     font-style: italic;
+}
+
+@media screen and (min-width: 375px) {
+    nav a {
+        padding: 0 0.1em 0;
+        font-size: 1.7em;
+    }
+
+    header > h1 {
+        font-size: 2.5em;
+    }
+
+    dt,
+    article > h1 {
+        font-size: 1.6em;
+    }
+
+    dd,
+    article > p {
+        font-size: 1.1em;
+    }
+
+    ul {
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 413px) {
+    nav a {
+        padding: 0 0.1em 0;
+        font-size: 1.9em;
+    }
+
+    header > h1 {
+        font-size: 2.8em;
+    }
+
+    dt,
+    article > h1 {
+        font-size: 1.8em;
+    }
+
+    dd,
+    article > p {
+        font-size: 1.2em;
+    }
+
+    ul {
+        font-size: 1.1em;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #splitter {
+        width: 60ch;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    nav a {
+        padding: 0 0.4em 0;
+        font-size: 2.5em;
+    }
+
+    header > h1 {
+        font-size: 3.5em;
+    }
+
+    dt,
+    article > h1 {
+        font-size: 2.5em;
+    }
+
+    dd,
+    article > p {
+        font-size: 1.5em;
+    }
+
+    ul {
+        font-size: 1.4em;
+    }
+
+    footer {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    nav a {
+        padding: 0 0.4em 0;
+        font-size: 2.5em;
+    }
+
+    header > h1 {
+        font-size: 3.5em;
+    }
+
+    dt,
+    article > h1 {
+        font-size: 2.5em;
+    }
+
+    dd,
+    article > p {
+        font-size: 1.6em;
+    }
+
+    ul {
+        font-size: 1.5em;
+    }
+
+    footer {
+        font-size: 1.3em;
+    }
 }
