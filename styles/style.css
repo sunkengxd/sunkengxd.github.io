@@ -42,7 +42,7 @@ body {
 }
 
 #container {
-    padding: 0 0.2rem;
+    padding: 0 1rem;
 }
 
 nav {
@@ -62,8 +62,7 @@ a {
     transition: color 0.5s ease-out;
 }
 
-a:hover,
-a:active {
+a:hover {
     color: var(--foreground);
 }
 
@@ -90,10 +89,6 @@ header > h1:after {
 
 #content {
     margin-bottom: 1em;
-}
-
-article {
-    margin: 0 auto;
 }
 
 article:not(:last-child) {
@@ -132,14 +127,15 @@ article > p {
     max-width: 50ch;
     width: 100%;
     display: block;
+    margin: 0 auto;
 
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
 }
 
-.entry > p:not(:last-child) {
-    margin-bottom: 0.5em;
+article > p:not(:last-child) {
+    margin-bottom: 1ex;
 }
 
 article > a {
@@ -149,15 +145,27 @@ article > a {
 
 ul {
     list-style-type: none;
-    margin: 0.4em 0;
+    padding-left: 10ex;
 }
 
-li {
-    padding-left: 4ex;
+ul:not(:last-child) {
+    margin-bottom: 1ex;
 }
 
 li:not(:last-child) {
     margin-bottom: 0.4em;
+}
+
+b {
+    font-weight: 600;
+}
+
+i {
+    font-style: italic;
+}
+
+li > i {
+    margin-right: 0.8em;
 }
 
 dt:not(:last-child) {
@@ -171,6 +179,7 @@ dt:not(:first-child) {
 dd {
     margin: 0 0 0.2em 1em;
 }
+
 footer {
     padding: 0 0.5rem 0.5rem 0;
     font-size: 0.8em;
@@ -268,34 +277,5 @@ footer {
 
     footer {
         font-size: 0.9em;
-    }
-}
-
-@media screen and (min-width: 1023px) {
-    nav a {
-        padding: 0 0.4em 0;
-        font-size: 2.5em;
-    }
-
-    header > h1 {
-        font-size: 3.5em;
-    }
-
-    dt,
-    article > h1 {
-        font-size: 2.5em;
-    }
-
-    dd,
-    article > p {
-        font-size: 1.2em;
-    }
-
-    ul {
-        font-size: 1.1em;
-    }
-
-    footer {
-        font-size: 1em;
     }
 }
