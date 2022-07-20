@@ -64,6 +64,7 @@ a {
 
 a:hover {
     color: var(--foreground);
+    cursor: pointer;
 }
 
 header > h1 {
